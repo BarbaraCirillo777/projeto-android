@@ -69,7 +69,7 @@ header > p { /*herder do paragrafo*/
     padding-right: 10px;/* Feito pra que o texto tenha uma sobra e não fique batendo na lateral se diminuir a tela*/
     padding-left: 10px; /*Idem pra esquerda*/
     margin: auto;/*Pra margem se auto ajustar e não ficar toda atrapalhada*/
-    margin-bottom: 20px;
+    padding-bottom: 50 px; /*Aqui deu manutenção de margin-botton de 20px para padding-bottom de 50px*/
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.336) ;/*Sombra do texto do paragrafo*/
     
 }
