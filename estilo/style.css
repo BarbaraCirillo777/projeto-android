@@ -1,0 +1,235 @@
+@charset "UTF-8"; /* Pra não ter conflito na escrita*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /*Importou as fontes desejadas*/
+
+/*quando tiver . significa que é a pasta atual e .. é a pasta anterior e no caso esta falando abra pasta fontes e pasta android e por isso o ..*/
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+    font
+}
+
+/*Facilita colocar a paleta aqui e sendo em root, vai servir pro documento todo, quando vc for colocar a cor, essa paleta aparece como opção*/
+:root {
+    --cor0: #ebe5c5;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c57;
+    --cor5: #063d1e;
+
+    /*Mesma coisa que as cores*/
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: "Bebas Neue" , sans-serif;
+    --font-android: 'Android', sans-serif;
+
+}
+
+* {   /* sinal Global para h1,h2,p,.Ela vai configurar a margem e espaçamento pra todos os elementos.*/
+    margin: 0px;
+    padding: 0px;
+
+
+body {
+  background-color:var(--cor0); 
+  font-family: var(--fonte-padrao); /*Se refere pra chamar as fontes de destaque após as cores, quando colocar fonte, elas vem automaticamente pra escolher*/ 
+}
+ /*vai configurar o paragrafo, já que a parte de cima heard já foi toda configurada*/
+}
+
+/*configuração pra que todo os links que forem da classe externa, vai aparecer o emoji retirado do emojipedia.org*/
+a.externo::after {
+    content: '\00A0\1F517';/*colocou \00A0 ao contar*/
+}
+
+
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor2), var(--cor5));/*Aqui vai fazer a cor ficar degrade*/
+    min-height: 150px;/*altura pra minima e não ficar colado em cima pra facilitar pra qualquer dispositivo*/
+    text-align: center;/* Pra centralizar o texto da cabeça e se não funcionasse teria que ir no h1 e paragrafo da header pra fazer*/
+    padding-top: 40px;/*Pra ter uma distancia em cima e o texto não ficar colado lá em cima*/
+}
+
+header > h1 { /*heder do h1*/
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;/*Tamanho da fonte*/
+    font-weight: normal;
+    margin-bottom: 20px;/*Pra dar um espaço entre o primeiro texto e o segundo*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.265) ;/*Sombra do texto*/
+   
+}
+
+header > p { /*herder do paragrafo*/
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;/*tamanho da fonte*/
+    max-width: 600px;/* Pra determonar ate onde o texto vai*/
+    padding-right: 10px;/* Feito pra que o texto tenha uma sobra e não fique batendo na lateral se diminuir a tela*/
+    padding-left: 10px; /*Idem pra esquerda*/
+    margin: auto;/*Pra margem se auto ajustar e não ficar toda atrapalhada*/
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.336) ;/*Sombra do texto do paragrafo*/
+    
+}
+
+nav
+ {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.192);
+ }
+    /*nav é o home, noticias, fale conosco do inicio no heard*/
+ nav > a {
+    color: var(--cor1);
+    padding: 10px;/*Pra dar uma distancia entre as opções*/
+    border-radius: 5px;/*pra quando passar o mouse ficar arredondado o "quadradinho" das opcões*/
+    text-decoration: none;
+    font-weight: bold;/* fonte em negrito*/
+    transition-duration: 0.5s;/*Vai levar 1segundo de transição*/
+
+ }
+    /*quando passar o mouse vai destacar*/
+ nav > a:hover {
+    background-color: var(--cor3);
+    color: var(--cor5);
+/* Até aqui! Fez o cabeçalho inteiro (header e nav---------------------*/
+
+ }
+
+ main {
+    /*Com width vai fazer o site mais responsivel, dizendo a largura minima e maxima, pra mão ter problema de "quebra" de tela ao diminur.*/
+    min-width: 300px;/*Quando chegar a 300px, para de diminuir(imagens ainda não, elas serão feitas no main img*/
+    max-width: 1000px;/*Quando chegar a 1000px, para de crescer ( as imagens aina não!!!*/
+    background-color: white;
+    margin-bottom: 30px;/*O rodapé estava muito colado com o conteudo, sem espaço final e deu uma afastada*/
+    margin: auto; /* Isso torna a margem automatica pra quando a gente estiver vendo em tela cheia, ela não crescer*/
+    padding: 20px;/*estava muito grudado no main e deu uma afastada entre a caixa de titulo e a materia*/ 
+    box-shadow: 0px 0px 50px black;/*Sombra no padding*/
+    border-bottom-left-radius: 10px;/*Configurar as bordas 1/1 pra arredondar apenas as bordas de baixo (esquerda e direita)*/
+    border-bottom-right-radius: 10px;
+
+ }
+
+main h1 {
+    color: var(--cor5);
+    font-weight: normal;
+    font-size: 1.8em;
+    font-family: var(--font-android);/* Onde estiver fonte family a dinamica é igual a de cima, só que determinou que sera usada a font android pra todo h1*/
+}
+    /*Configurar tudo que esta em h2*/
+main h2 {
+    font-family: var(--font-android);
+    color: var(--cor5);
+    text-align: justify;
+    text-indent: 8px;
+    font-size: 1.3em;
+    font-weight: normal;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    
+
+}
+
+main p {
+    margin: 15px 0px 15px 0px 15px;/*poderia ter colocado 15px 0px pra facilitar os 4 lados da margem. criando uma margem em todos os paragrafos do body*/
+    text-align: justify;/* Porem teve que colocar main p(semm o sinal >, pois dai o p pode estar em qualquer nivel e até dentro de outras tags) e não apenas p, pois acabou modificando no heard tambem*/
+    text-indent: 30px;/* recuo do texto no paragrafo*/
+    font-size: 1em;/* tamanho da fonte*/
+    line-height: 2em;/*É a altura da linha, espaçamento entre uma linha e outra.*/
+    
+}
+    /*Tudo que tem strong vai ser configurado aqui*/    
+main strong {
+    color: var(--cor4);
+    font-weight: bold;
+    
+}
+
+/*configuração dos links, menos os de baixo*/
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;/*Usei 2 valores ao invez dos 4*/
+
+}
+
+/*configurar os links pra quando passar o mouse em cima*/
+main a:houver {
+    text-decoration: underline;/* Usou texto de decoração e sobre a linha pra ter o efeito de quando passar o mouse em cima a cor mudar*/
+    color: var(--cor4);/* A cor vai mudar pra essa*/
+}
+
+main img {
+    width: 100%;/*Aqui se resolve a resolução da imagem ao aumentar e diminuir a tela, sendo mais responsiva, se adaptando*/   
+}
+
+main img.pequena {
+   max-width: 350px;/* Aqui definiu o tamanho da imagem do dandroid, ela vai continuar o tamanho, não vai ficar diminuindo e aumentando de tamanho e com resolução legal. (tem uma obs na pag. do codigo html*/
+   display: block;/* Por padrão uma img não é um bloco, então tem que colocar display block pra funcionar o width 50%*/
+   margin: auto;
+}
+
+div.video { /*Tudo o que é div da classe video,*/
+    background-color: var(--cor5);
+    /*Foi substituido no margin com 30px e -20px margin-bottom: 30px;Não ter o video colado na caixa do quer aprender mais?*/
+    margin: 0px -20px 30px -20px;/*Pra colar as laterais do video */
+    padding: 20px;
+    padding-bottom: 58%;/*Pra arrumar o video depois de colocar position relative e na conf. de baixo position absolute*/
+    position: relative;
+}
+
+/*Agora que vem a gambiarra do video*/
+div.video > iframe {
+    position: absolute;/*coloca esse e depois em cima position relative*/
+    top:5%;
+    left: 5%;
+    width: 90%;/* Consegue fazer isso aqui, pois a porcentagem foi definida no padding bottom de cima e idem para o de baixo*/
+    height: 90%;
+}
+
+    /*configuração o que esta dentro do quer aprender mai?*/
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.299);/* Deu uma sombra embaixo,entre a caixa e o rodapé*/
+}
+
+    /*Vai configurar o quer aprender mais(literalmente)*/
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;/*deu uma engordadinha na "caixa"*/
+    margin: -10px -10px 0px -10px;/*aumentou a margem*/
+    border-radius: 10px 10px 0px 0px;/* Arredondou os cantos, já que aumentou a margem e ela perdeu o arredondamento*/
+
+}
+    /*Vai configurar as palavras que quando passa o mouse em cima, elas falam algo à respeito da palavra*/
+aside > ul {
+    list-style-type: '\2714\00A0\00A0';/* um ☑️ vai no emojipedia.org e copia o codigo sem o U+ e depois coloca na frente do numero\(contra barra) e entre aspas .Como ficou muito proximo das letras, coloca mais um contra barra e 00A0 pra dar espaço(coloca 2 deles)*/ 
+    list-style-position: inside;/*as bolinhas pra dentro*/
+    columns: 2;/*divide as opç~es em 2 colunas pra não ficar muito grande com elas uma embaixo da outra*/
+} 
+
+    /*Configurações do rodapé*/ 
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+    /*Configura todo link que tem no paragrafo do footer*/
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+    /*Configuração de quando passar o mouse em cima dos links do footer*/
+footer a:houver {
+    text-decoration: underline;
+    color: var(--cor1);
+}
